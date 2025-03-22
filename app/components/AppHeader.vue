@@ -47,26 +47,39 @@ const items: Ref = ref<object[]>([
       </v-text-field>
     </div>
     <template #append>
-        <v-menu location="bottom">
-          <template #activator="{ props }">
-            <v-btn icon v-bind="props">
-              <v-icon>mdi-help-circle-outline</v-icon>
-              <v-tooltip activator="parent" location="bottom"
-                >Support</v-tooltip
-              >
-            </v-btn>
-          </template>
+      <v-menu location="bottom">
+        <template #activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-icon>mdi-help-circle-outline</v-icon>
+            <v-tooltip activator="parent" location="bottom">Support</v-tooltip>
+          </v-btn>
+        </template>
 
-          <v-list>
-            <v-list-item
-              v-for="(item, index) in items"
-              :key="index"
-              @click="item.action"
-            >
-              <v-list-item-title class="ml-4">{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            @click="item.action"
+          >
+            <v-list-item-title class="ml-4">{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn icon>
+        <v-icon>mdi-cog-outline</v-icon>
+        <v-tooltip activator="parent" location="bottom">Settings</v-tooltip>
+      </v-btn>
+      <v-btn icon>
+        <GeminiIcon />
+        <v-tooltip activator="parent" location="bottom">Try Gemeni</v-tooltip>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-apps</v-icon>
+        <v-tooltip activator="parent" location="bottom">Google apps</v-tooltip>
+      </v-btn>
+      <v-btn icon >
+        <v-icon >mdi-account</v-icon>
+      </v-btn>
     </template>
   </v-app-bar>
 </template>

@@ -4,7 +4,9 @@ const showDialog = ref(false);
 
 <template>
   <div class="container">
-    Hello
+    <TheMainMenu />
+    <TheMainView/>
+    <TheSidePanel/>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ const showDialog = ref(false);
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: space-between;
+  height: calc(100vh - 70px);
 }
 </style>
